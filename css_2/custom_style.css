@@ -1,0 +1,163 @@
+
+/* BODY */
+body{ margin-top: 1%;}
+
+/* NAV BAR */
+.navbar {
+    margin-bottom: 0;
+    background-color: #022150;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+	font-weight:bold;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #0257a0 !important;
+    background-color: #ccced4 !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.navbar-brand{
+	margin-left:0px;
+}
+
+ul.nav li.menus:hover > ul.submenus {
+    display: block;    
+}
+
+@media (min-width: 979px) {
+  ul.nav li.menus:hover > ul.submenus {
+    display: block;
+	background-color: #022150;
+  }
+}
+
+.submenus{
+    margin-bottom: 0;
+    background-color: #022150;
+    z-index: 9999;
+    border: 0;
+    border-radius: 0;
+}
+
+.submenus li a {
+    font-size: 12px !important;
+	font-weight:bold;
+    line-height: 40px !important;
+    letter-spacing: 4px;
+    color: #fff !important;
+}
+
+.submenus li a:hover {
+    color: #0257a0 !important;
+    background-color: #ccced4 !important;
+}
+
+
+/* Notification */
+.notif{
+    background-color: #fff;
+    z-index: 9999;
+    border: 0;
+    border-radius: 0;
+	width: 250px;
+	text-align: left;
+}
+
+.notif li a {
+    font-size: 10px !important;
+    color: #000 !important;
+}
+
+
+#brand-image{
+	position:relative;
+	top: -16px;
+	height:50px;	
+}
+
+/*Header*/
+#logo{
+    float: left;
+    margin: 0 0 10px 10px;
+	width: 100px;
+	position:relative;
+	top: 5px;
+	
+}
+
+.header{
+	background-color: #02578b;
+	color: #FFF;
+	margin-bottom: 0px;
+	height: 186px;
+}
+ 
+.header-container{
+	background-color: #02578b;
+	color: #FFF;
+	margin-bottom: 0px;
+	height: 100%;
+}
+.header small{
+	color: #FFF;
+}
+
+/* Page Title Properties*/
+.page_title_container{
+	background-color:#3e82e5;
+	padding:0px 0px 10px 30px;
+}
+
+.page_title_container div  h1{
+	color: #FFF;
+	vertical-align:middle;
+}
+
+/*SIDE BAR AND MAIN*/
+.main_page{
+	background-color:#FFF;
+}
+/*SIDE BAR*/
+.side_bar{
+	margin-top:30px;
+}
+.side_bar > a{
+	font-size: 14px;
+	font-weight: bold;
+	background-color:white;
+}
+
+.side_bar a:hover{
+    color: #0257a0 !important;
+    background-color: #ccced4 !important;
+}
+
+/*MAIN*/
+.main_page{
+	background-color:#3e82e5;
+	padding:0px 0px 10px 10px;
+}
+
+.content{
+	background-color:#FFF;
+	border: 1px solid solid;
+	font-size: 14px;
+}
+
+.table > tbody > tr > td, .table > thead > tr > th{
+	vertical-align:middle;
+	font-size: 14px;
+}
