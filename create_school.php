@@ -20,7 +20,7 @@ if ( !empty($_POST)) {
         header('Location:school_view.php?error=regsuccess');
     }
     else{
-        header('Location:create_school.php?error=regduplicate');
+        header('Location:new_school.php?error=regduplicate');
     }
 
 }

@@ -38,7 +38,6 @@ else if(isset($_POST['enablethis'])){
 				<table class="table table-hover">
 					<thead>
 						<tr class="alert-info">
-							<th>User ID</th>
                             <th>Name</th>
                             <th>Username</th>
                             <th>E-mail</th>
@@ -54,7 +53,6 @@ else if(isset($_POST['enablethis'])){
 							$sql = 'SELECT * FROM users ORDER BY userid';
 							foreach ($conn->query($sql) as $row) {
 							echo '<tr>';
-								echo '<td>'. $row['userid'] . '</td>';
 								echo '<td>'. $row['fullname'] . '</td>';
 								echo '<td>'. $row['username'] . '</td>';
                                 echo '<td>'. $row['email'] . '</td>';

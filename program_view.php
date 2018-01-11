@@ -24,10 +24,9 @@ include('header_ipsmc.php');
 				<table class="table table-hover">
 					<thead>
 						<tr class="alert-info">
-                                <th>ID</th>
-                                <th>School</th>
-                                <th>Country</th>
                                 <th>Program</th>
+                                <th>Country</th>
+                                <th>School</th>
                                 <th>Tuition</th>
 							<th class="text-center">Action</th>
 						</tr>
@@ -39,10 +38,9 @@ include('header_ipsmc.php');
 							$sql = 'SELECT * FROM addingprograms ORDER BY ID';
 							foreach ($conn->query($sql) as $row) {
 							echo '<tr>';
-								echo '<td>'.$row['ID'].'</td>';
-                    			echo '<td>'.$row['School'] . '</td>';
+                    			echo '<td>'.$row['Program'] . '</td>';
                     			echo '<td>'.$row['Country'] . '</td>';
-                    			echo '<td>'.$row['Program']. '</td>';
+                    			echo '<td>'.$row['School']. '</td>';
                     			echo '<td>'.$row['Tuition']. '</td>';
 								echo '<td class="text-center">
 										<button id="update" type="button" class="btn btn-warning btn-md updateB" rel="tooltip" title="Update Item" data-toggle="modal" data-target="#updateModal" value="'.$row['ID'].'"><span class="glyphicon glyphicon-pencil"></span></button>

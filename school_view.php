@@ -24,7 +24,6 @@ include('header_ipsmc.php');
 				<table class="table table-hover">
 					<thead>
 						<tr class="alert-info">
-							<th>ID</th>
                                 <th>School</th>
                                 <th>Address</th>
                                 <th>Country</th>
@@ -39,7 +38,6 @@ include('header_ipsmc.php');
 							$sql = 'SELECT * FROM addingSchool ORDER BY ID';
 							foreach ($conn->query($sql) as $row) {
 							echo '<tr>';
-								echo '<td>'.$row['ID'].'</td>';    
                     			echo '<td>'.$row['School'] . '</td>';
                     			echo '<td>'.$row['Address'] . '</td>';
                     			echo '<td>'.$row['Country']. '</td>';

@@ -39,6 +39,16 @@ $(document).ready(function () {
 						<div class="panel-body" style="padding-left:30px;">
 							<div class="col-lg-12 forms">
 								<h1>School Application</h1>
+                
+                <?php
+
+                  if(isset($_REQUEST['error']) && $_REQUEST['error'] == "regduplicate")
+                  {
+                    echo "<span style='color:red;'>That School is already exist.</span>";
+                  }
+
+                ?>
+
                     				<div class="alert alert-info alert-dismissable">
                       					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                       					Supply the information needed below.
