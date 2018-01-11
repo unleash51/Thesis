@@ -5,24 +5,22 @@
     if ( !empty($_POST)) {
 
         
-		$school = $_POST['school'];
-		$country = $_POST['country'];
 		$program = $_POST['program'];
+		$country = $_POST['country'];
+		$school = $_POST['school'];
         $tuition = $_POST['tuition'];
 
          
-        
-        $valid = true;
-
-        
-        if ($valid) {
-            $pdo = Database::connect();
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO addingprograms (school, country, program, tuition) values(?, ?, ?, ?)";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($school,$country,$program,$tuition));
-            Database::disconnect();
-            header("Location: program_view.php");
-        }
+        $duplicatesql = "SELECT * FROM `addingprograms` WHERE `Program` LIKE '".$program."'";
+        $duplicatesql1 = mysqli_query($con,$duplicatesql);
+        $duplicatesqlrow_count = mysqli_num_rows($duplicatesql1);
+        if($duplicatesqlrow_count == 0){
+        $sql = "INSERT INTO `addingprograms` (`program`, `country`, `school`, `tuition`) values ('".$program."', '".$country."', '".$school."', '".$tuition."')";
+            mysqli_query($con,$sql);
+            header('Location:program_view.php?error=regsuccess');
+            }
+            else{
+            header('Location:new_program.php?error=regduplicate');
+            }
     }
 ?>

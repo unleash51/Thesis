@@ -45,23 +45,35 @@ $(document).ready(function () {
                     				</div> 
                 			</div>
                       		<div class="form-group">
-                        		<label>School Name</label>
-                        		<input class="form-control" name="school" required="required">
+                        		<label>Program Offered</label>
+                        		<input style="width: 845px;" class="form-control" name="program" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Country Located</label>
-                        		<input class="form-control" name="country" required="required">
+                            <select style="width: 845px;" class="form-control" name="country" required="required">
+                                <option value="Australia">Australia</option>
+                                <option value="Canada">Canada</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Myanmar">Myanmar</option>
+                                <option value="Cambodia">Cambodia</option>
+                                <option value="Laos">Laos</option>
+                                <option value="Brunei">Brunei</option>
+                            </select>
+                        		<!-- <input style="width: 845px;" class="form-control" name="country" required="required"> -->
                       		</div>
                       		<div class="form-group">
-                        		<label>Program Offered</label>
-                        		<input class="form-control" name="program" required="required">
+                        		<label>School Name</label>
+                        		<input style="width: 845px;" class="form-control" name="school" required="required">
                       		</div>
                           <div class="form-group">
                             <label>Tuition</label>
-                            <input class="form-control" name="tuition" required="required">
+                            <input style="width: 845px;" class="form-control" name="tuition" required="required">
                           </div>
-                    
-                      		<!-- <button type="submit" name="add" class="btn btn-warning btn-md updateB">Insert</button> -->
                          
                           <div class="form-actions text-center forms">
                             <input type="submit" class="btn btn-warning btn-md updateB" name="add" value="Insert"/>

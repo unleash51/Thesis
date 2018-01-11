@@ -1,28 +1,27 @@
 <?php
-    require 'database.php';
-    require 'db_connect.php';
- 
-    if ( !empty($_POST)) {
+require 'database.php';
+require 'db_connect.php';
 
-        
-		$school = $_POST['school'];
-		$address = $_POST['address'];
-		$country = $_POST['country'];
-        $contact = $_POST['contact'];
+if ( !empty($_POST)) {
 
-         
-        
-        $valid = true;
+    // keep track post values
+    $school = $_POST['school'];
+    $address = $_POST['address'];
+    $country = $_POST['country'];
+    $contact = $_POST['contact'];
 
-        
-        if ($valid) {
-            $pdo = Database::connect();
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO addingschool (school, address, country, contact) values(?, ?, ?, ?)";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($school,$address,$country,$contact));
-            Database::disconnect();
-            header("Location: school_view.php");
-        }
+
+    $duplicatesql = "SELECT * FROM `addingschool` WHERE `School` LIKE '".$school."'";
+    $duplicatesql1 = mysqli_query($con,$duplicatesql);
+    $duplicatesqlrow_count = mysqli_num_rows($duplicatesql1);
+    if($duplicatesqlrow_count == 0){
+        $sql = "INSERT INTO `addingschool` (`school`, `address`, `country`, `contact`) values ('".$school."', '".$address."', '".$country."', '".$contact."')";
+        mysqli_query($con,$sql);
+        header('Location:school_view.php?error=regsuccess');
     }
+    else{
+        header('Location:create_school.php?error=regduplicate');
+    }
+
+}
 ?>

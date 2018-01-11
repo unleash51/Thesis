@@ -68,15 +68,15 @@ $(document).ready(function () {
                       		</div>
                       		<div class="form-group">
                         		<label>First Name</label>
-                        		<input class="form-control" name="firstname" required="required">
+                        		<input style="width: 845px;" class="form-control" name="firstname" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Middle Name</label>
-                        		<input class="form-control" name="middlename" required="required">
+                        		<input style="width: 845px;" class="form-control" name="middlename" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Last Name</label>
-                        		<input class="form-control" name="lastname" required="required">
+                        		<input style="width: 845px;" class="form-control" name="lastname" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Gender</label>
@@ -91,32 +91,32 @@ $(document).ready(function () {
                       		</div>
                       		<div class="form-group">
                         		<label>Date of Birth</label>
-                        		<input class="form-control" id = "inputDateIssueR" name="date" required="required">
+                        		<input style="width: 845px;" class="form-control" id = "inputDateIssueR" name="date" required="required">
                       		</div>
 							
                       		<div class="form-group">
                         		<label>Nationality</label>
-                        		<input class="form-control" name="nationality" required="required">
+                        		<input style="width: 845px;" class="form-control" name="nationality" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Complete Address</label>
-                        		<input class="form-control" name="address" required="required">
+                        		<input style="width: 845px;" class="form-control" name="address" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Country of Birth</label>
-                        		<input class="form-control" name="country" required="required">
+                        		<input style="width: 845px;" class="form-control" name="country" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Home Phone Number</label>
-                        		<input class="form-control" name="home" required="required">
+                        		<input style="width: 845px;" class="form-control" name="home" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>Mobile Phone Number</label>
-                        		<input class="form-control" name="mobile" required="required">
+                        		<input style="width: 845px;" class="form-control" name="mobile" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>E-Mail Address</label>
-                        		<input class="form-control" name="email" required="required">
+                        		<input style="width: 845px;" class="form-control" name="email" required="required">
                       		</div>
                       		<div class="form-group">
                         		<label>NSO</label>
@@ -138,7 +138,7 @@ $(document).ready(function () {
                         		<label> Visa Status </label>
                       		</div>
                       		<div class="form-group">
-                          		<select class="form-control" name="status" required="required">
+                          		<select style="width: 845px;" class="form-control" name="status" required="required">
                           			<option value="Pending">Pending</option>
                           			<option value="Incomplete">Received(Incomplete)</option>
                           			<option value="Received">Received</option>
@@ -146,7 +146,6 @@ $(document).ready(function () {
                           			<option value="Denied">Denied</option>
                         		</select>
                       		</div>
-                      		<!-- <button type="submit" name="add" class="btn btn-warning btn-md updateB">Insert</button> -->
                          
                           <div class="form-actions text-center forms">
                             <input type="submit" class="btn btn-warning btn-md updateB" name="add" value="Insert"/>
