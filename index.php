@@ -29,10 +29,10 @@
 					echo "<span style='color:red;'>*Your account have been disabled by the admin. Please contact support for further details</span>";
 				}
 				else if(isset($_REQUEST['error']) && $_REQUEST['error'] == "wrongpass"){
-					echo "<span style='color:red;'>*You enter a wrong username or password. Please login again.</span>";
+					echo "<span style='color:red;'>You enter a wrong username or password. Please login again.</span>";
 				}
 				else if(isset($_REQUEST['error']) && $_REQUEST['error'] == "regsuccess"){
-					echo "<span style='color:green;'>*You have successfully created an account.</span>";
+					echo "<span style='color:green;'>You have successfully created an account.</span>";
 				}
 				else if(isset($_REQUEST['error']) && $_REQUEST['error'] == "regduplicate"){
 					echo "<span style='color:red;'>Username is already taken.</span>";

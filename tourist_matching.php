@@ -55,15 +55,6 @@ $(document).ready( function() {
                             ?>
                             </select>
               </div>
-              <!--<div class="form-group">
-                <label>Purpose/Category</label>
-                <select id="category" name="category" class="form-control">
-                  <option value="Shopping">Shopping</option>
-                  <option value="Adventure">Adventure</option>
-                  <option value="Find Work">Find Work</option>
-                </select>
-              </div>-->
-
               <div class="form-group">
                 <label>Plane Fare (Back and Forth)</label>
                 <input type="number" step="1000" id="fare" name="fare" class="form-control" placeholder="Plane Fare">
@@ -79,9 +70,9 @@ $(document).ready( function() {
         </div>
     </div>
   </div>
-  <div id="ajaxresult">
-    
-  </div>
+      <div id="ajaxresult">
+
+      </div>
 
 <?php
 include('footer.html');

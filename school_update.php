@@ -11,11 +11,11 @@
 
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "UPDATE addingschool SET School = ?, Address = ?, Country = ?, Contact = ? WHERE ID = ?";
+		$sql = "UPDATE school_details SET school_name = ?, school_address = ?, school_country = ?, school_contact = ? WHERE school_id = ?";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($school, $address, $country, $contact, $ID));
 		Database::disconnect();
-		header("Location: school_view.php");
+		header("Location: school_view.php?error=updatesuccess");
         
     }else{
 		header("Location: school_view.php");

@@ -21,7 +21,16 @@ if(isset($_POST['add'])){
 	$email = $_POST['email'];
 	$status = $_POST['status'];
 	$counter = "1";
-	$resultsql = "SELECT * FROM `visa_application` WHERE `applicantsid` LIKE '".$year."%' ORDER BY `counter` DESC LIMIT 1";
+	if($category == "student" || $category =="Student"){
+		$resultsql = "SELECT * FROM `visa_application` WHERE `applicantsid` LIKE 'S".$year."%' ORDER BY `counter` DESC LIMIT 1";
+	}
+	else if($category == "tourist" || $category =="Tourist"){
+		$resultsql = "SELECT * FROM `visa_application` WHERE `applicantsid` LIKE 'T".$year."%' ORDER BY `counter` DESC LIMIT 1";
+	}
+	else{
+		$resultsql = "SELECT * FROM `visa_application` WHERE `applicantsid` LIKE 'U".$year."%' ORDER BY `counter` DESC LIMIT 1";
+	}
+	
 	$result1 = mysqli_query($con,$resultsql);
 	$row_count = mysqli_num_rows($result1);
 	if($row_count > 0){
@@ -123,11 +132,13 @@ if(isset($_POST['add'])){
 	
 	?>
 	<div style="margin-top:30px;"><h2 class="bg-success" style="text-align:center; padding:20px; width:70%; margin: 0 auto; border-radius:25px;">Successfully Registered with <?php echo ucwords($category); ?> ID of <?php echo $category_id; ?></h2></div>
-	<?php
-	echo $errors;
+	
+	<div style="margin-top:30px;"><h3 class="bg-success" style="text-align:left; padding:20px; width:70%; margin: 0 auto; border-radius:25px;">
+	<?php echo $errors;
 	}
 	else{
-	?>
+	?></h3></div>
+	
 	<div style="margin-top:30px;"><h2 class="bg-success" style="text-align:center; padding:20px; width:70%; margin: 0 auto; border-radius:25px;">User with same name and category is already registered on the system</h2></div>
 	<?php
 	echo $errors;

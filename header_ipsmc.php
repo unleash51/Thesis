@@ -114,7 +114,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                     
                     </button>
-                    <a class="navbar-brand" href="home.php">
+                    <a class="navbar-brand">
                         <img src="img/logo.png" id="brand-image" alt="IPSMC Logo" width="90" height="90" />
                     </a>
                 </div>	
@@ -122,19 +122,19 @@
                     <ul class="nav navbar-nav">
                         <li><a href="home.php">Home</a></li>
                         
+                        <?php if($user['usertype'] == 'Admin'){?>
+                        
                         <li class="dropdown menus">
                             <a href="#" data-toggle="dropdown ">Entries</a>
                             <ul class="dropdown-menu submenus">
-                                <?php if($user['usertype'] == 'Admin'){?>
-                                            <li><a href="visa_application.php" >Visa Application</a></li>
-                                            
-                                        
-                                <?php } ?>  
                                 
+                                <li><a href="visa_application.php" >Visa Application</a></li>
                                 <li><a href="new_school.php">Colleges/Universities</a></li>
                                 <li><a href="new_program.php">Program of Study</a></li>  
+                                
                             </ul>
                         </li>
+                        <?php } ?> 
                         <li class="dropdown menus">
                             <a href="#" data-toggle="dropdown ">List</a>
                             <ul class="dropdown-menu submenus">

@@ -33,7 +33,7 @@
             $q = $pdo->prepare($sql);
             $q->execute(array($status, $id));
             Database::disconnect();
-            header("Location: client_view.php");
+            header("Location: client_view.php?error=updatesuccess");
         }
     }
 ?>

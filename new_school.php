@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
+include 'db_connect.php'; 
 include('header_ipsmc.php'); 
 ?>
 <script src="js/jquery-1.9.1.min.js"></script>
@@ -42,15 +43,14 @@ $(document).ready(function () {
                 
                 <?php
 
-                  if(isset($_REQUEST['error']) && $_REQUEST['error'] == "regduplicate")
+                  if(isset($_REQUEST['error']) && $_REQUEST['error'] == "addduplicate")
                   {
-                    echo "<span style='color:red;'>That School is already exist.</span>";
+                    echo "<span style='color:red;'>The Data already exist.</span>";
                   }
 
                 ?>
 
                     				<div class="alert alert-info alert-dismissable">
-                      					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                       					Supply the information needed below.
                     				</div> 
                 			</div>
@@ -65,18 +65,17 @@ $(document).ready(function () {
                       		<div class="form-group">
                         		<label>Country Located</label>
                         		<select style="width: 845px;" class="form-control" name="country" required="required">
-                                <option value="Australia">Australia</option>
-                                <option value="Canada">Canada</option>
-                                <option value="New Zealand">New Zealand</option>
-                                <option value="Thailand">Thailand</option>
-                                <option value="Vietnam">Vietnam</option>
-                                <option value="Indonesia">Indonesia</option>
-                                <option value="Malaysia">Malaysia</option>
-                                <option value="Singapore">Singapore</option>
-                                <option value="Myanmar">Myanmar</option>
-                                <option value="Cambodia">Cambodia</option>
-                                <option value="Laos">Laos</option>
-                                <option value="Brunei">Brunei</option>
+                                
+                                <?php 
+                                  $result0 = mysqli_query($con, "SELECT * FROM `country` ORDER BY `country` ASC");
+
+                                   while($extract0 = mysqli_fetch_array($result0))
+                                   {
+                                      $country = $extract0['country'];
+                                      echo "<option value='".$country."' class='category'>".ucwords($country)."</option>"; 
+                                  }
+                                ?>
+
                             </select>
                       		</div>
                           <div class="form-group">

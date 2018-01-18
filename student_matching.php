@@ -55,17 +55,6 @@ $(document).ready( function() {
                             </select>
               </div>
               <div class="form-group">
-                <!--<label>Preferred Course</label>
-                <select id="course" name="course" class="form-control">
-                  <?php /*
-                    $result1 = mysqli_query($con, "SELECT * FROM `courses` ORDER BY `course` ASC");
-
-                    while($extract = mysqli_fetch_array($result1)){
-                      $course = $extract['course'];
-                      echo "<option value='".$course."'>".ucwords($course)."</option>"; 
-                    }*/
-                  ?>
-                </select>-->
                  <label>Preferred Degree</label>
                 <select id="course" name="course" class="form-control">
                   <option value="Post Graduate">Post Graduate</option>
@@ -77,7 +66,7 @@ $(document).ready( function() {
 
               <div class="form-group">
                 <label>Tuition</label>
-                <input type="number" step="0.01" id="tuitionfrom" name="tuitionfrom" class="form-control" placeholder="Tuition From" style="width:calc(50% - 47px); display:inline;"> TO <input type="number" step="0.01" id="tuitionto" name="tuitionto" class="form-control" placeholder="Tuition To" style="width:calc(50% - 47px); display:inline;">
+                <input type="number" step="0.01" id="tuitionfrom" name="tuitionfrom" class="form-control" placeholder="Tuition From" style="width:calc(50% - 47px); display:inline;"> <label>To</label> <input type="number" step="0.01" id="tuitionto" name="tuitionto" class="form-control" placeholder="Tuition To" style="width:calc(50% - 47px); display:inline;">
               </div>
 
               <div class="form-actions text-center forms">
@@ -90,13 +79,9 @@ $(document).ready( function() {
         </div>
     </div>
   </div>
-<div class="container-fluid">
-    <div class="container-fluid content col-md-10" style="padding-left: 210px;">
       <div id="ajaxresult">
 
       </div>
-    </div>
-</div>
 <?php
 include('footer.html');
 ?>

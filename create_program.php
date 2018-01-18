@@ -5,22 +5,23 @@
     if ( !empty($_POST)) {
 
         
-		$program = $_POST['program'];
-		$country = $_POST['country'];
+		$course = $_POST['program'];
+		$category = $_POST['category'];
 		$school = $_POST['school'];
         $tuition = $_POST['tuition'];
 
          
-        $duplicatesql = "SELECT * FROM `addingprograms` WHERE `Program` LIKE '".$program."'";
+        $duplicatesql = "SELECT * FROM `courses` WHERE `course` LIKE 
+        '".$course."' && `school_id` LIKE '".$school."'";
         $duplicatesql1 = mysqli_query($con,$duplicatesql);
         $duplicatesqlrow_count = mysqli_num_rows($duplicatesql1);
         if($duplicatesqlrow_count == 0){
-        $sql = "INSERT INTO `addingprograms` (`program`, `country`, `school`, `tuition`) values ('".$program."', '".$country."', '".$school."', '".$tuition."')";
+        $sql = "INSERT INTO `courses` (`course`, `school_id`, `tuition`, `category`) values ('".$course."', '".$school."', '".$tuition."', '".$category."')";
             mysqli_query($con,$sql);
-            header('Location:program_view.php?error=regsuccess');
+            header('Location:program_view.php?error=addsuccess');
             }
             else{
-            header('Location:new_program.php?error=regduplicate');
+            header('Location:new_program.php?error=addduplicate');
             }
     }
 ?>

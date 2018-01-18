@@ -18,14 +18,14 @@ $result1 = mysqli_query($con,$resultsql);
 $row_count = mysqli_num_rows($result1);
 if($row_count > 0){
 echo "<div class='panel-body' style=''><div class='table-responsive'><table class='table table-hover'>";
-echo "<thead><tr class='alert-info'><th>Country</th><th>School</th><th>Course</th><th>Category</th><th>Tuition</th></tr></thead>";
+echo "<thead><tr class='alert-info'><th>School</th><th>Course</th><th>Country</th><th>Category</th><th>Tuition</th></tr></thead>";
 while($extract = mysqli_fetch_array($result1)){
     $school = $extract['school_name'];
     $course = $extract['course'];
     $tuition = $extract['tuition'];
     $country = $extract['school_country'];
     $category = $extract['category'];
-    echo "<tr><td>$country</td><td>$school</td><td>".ucwords($course)."</td><td>".ucwords($category)."</td><td>$tuition</td></tr>";
+    echo "<tr><td>$school</td><td>".ucwords($course)."</td><td>$country</td><td>".ucwords($category)."</td><td>$tuition</td></tr>";
 }
 echo "</table></div></div>";
 }

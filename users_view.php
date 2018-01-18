@@ -1,7 +1,6 @@
 <?php 
 include 'connect.php';
 include('header_ipsmc.php'); 
-print_r($_POST);
 
 if(isset($_POST['disablethis'])){
 	$disableuser = $_POST['disablethis'];
@@ -58,8 +57,7 @@ else if(isset($_POST['enablethis'])){
                                 echo '<td>'. $row['email'] . '</td>';
 								echo '<td>'.$row['password']. '</td>';
                                 echo '<td>'.$row['usertype']. '</td>';
-								echo '<td class="text-center">
-								<button class="btn btn-danger btn-md deleteB" value="'.$row['userid'].'" data-toggle="modal" data-target="#myModal2" rel="tooltip" title="Delete" name="delete"><span class="glyphicon glyphicon-trash"></span></button>';
+								echo '<td class="text-center">';
 								$disabled = $row['disable'];
 								if($disabled == "0"){
 									echo '&nbsp; <button class="btn btn-danger btn-md disablebtn" value="'.$row['userid'].'" data-toggle="modal" data-target="#myModal3" rel="tooltip" title="Disable" name="disable"><span class="glyphicon glyphicon-ban-circle"></span></button>';
@@ -84,32 +82,6 @@ else if(isset($_POST['enablethis'])){
 		</div>
 	</div>
 	
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document" >
-    <div class="modal-content" style="margin-top:10%;">
-      <div class="modal-header btn-danger">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Delete Registration</h4>
-      </div>
-      
-      <form class="form-horizontal" action="delete_users.php" method="post">
-      
-      <div class="modal-body content">
-        <input type="hidden" name="id" id="deleteTextField"/>
-        <div class="alert alert-danger" role="alert">Are you sure you want to remove this user from the system?</div>
-      </div>
-      
-      <div class="modal-footer">
-      	<button type="submit" class="btn btn-danger">Delete</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        
-      </div>
-      </form>
-    </div>
-  </div>
 </div>
 
 <!-- Modal -->
@@ -142,7 +114,7 @@ else if(isset($_POST['enablethis'])){
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document" >
     <div class="modal-content" style="margin-top:10%;">
-      <div class="modal-header btn-danger">
+      <div class="modal-header btn-success">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Enable User Access</h4>
       </div>
@@ -151,11 +123,11 @@ else if(isset($_POST['enablethis'])){
       
       <div class="modal-body content">
         <input type="hidden" name="enablethis" id="enablethis"/>
-        <div class="alert alert-danger" role="alert">Are you sure you want to enable the access of this user from the system?</div>
+        <div class="alert alert-success" role="alert">Are you sure you want to enable the access of this user from the system?</div>
       </div>
       
       <div class="modal-footer">
-      	<button type="submit" class="btn btn-danger">Enable</button>
+      	<button type="submit" class="btn btn-success">Enable</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         
       </div>
@@ -165,12 +137,6 @@ else if(isset($_POST['enablethis'])){
 </div>
 <script>
 $(document).ready(function(){
-	$('.deleteB').click(function(){
-		var value = $( this ).val();
-		console.log(value);
-		$('#deleteTextField').val(value);
-	}); 
-	
 	$('.enablebtn').click(function(){
 		var value = $( this ).val();
 		console.log(value);

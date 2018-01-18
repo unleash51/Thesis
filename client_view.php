@@ -68,11 +68,19 @@ function myFunction() {
 	<br>
 	<div class="panel panel-primary">
 		<div class="panel-heading content">
-				<strong>Visa Applicants List&nbsp;&nbsp;&nbsp;</strong>
+				<strong>Visa Applicants List&nbsp;&nbsp;&nbsp;
+				<?php
+
+                  if(isset($_REQUEST['error']) && $_REQUEST['error'] == "updatesuccess")
+                  {
+                    echo "<span style='color:yellow;'>Update Successfully.</span>";
+                  }
+
+                ?></strong>
 		</div>
 		<br>
 
-		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.." title="Type in" style="width: 3in">
+		<input style="margin-left: 10px; width: 250px;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.." title="Type in">
 
 		<div class="panel-body" style="margin:0 5%;">
 			<div class="table-responsive">
